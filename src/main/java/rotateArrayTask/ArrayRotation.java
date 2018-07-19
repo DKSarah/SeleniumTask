@@ -1,4 +1,4 @@
-package rotate_array_task;
+package rotateArrayTask;
 
 /**
  * Created by sarahd on 19/07/2018.

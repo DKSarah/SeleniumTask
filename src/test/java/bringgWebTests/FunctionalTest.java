@@ -1,4 +1,4 @@
-package selenium_task;
+package bringgWebTests;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class FunctionalTest {
 
-    static WebDriver webDriver;
+    protected static WebDriver webDriver;
 
     @BeforeClass
     public static void setUp(){

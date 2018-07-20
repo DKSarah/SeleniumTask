@@ -3,7 +3,7 @@ package seleniumTask.webInfra;
 /**
  * Created by sarahd on 19/07/2018.
  */
-public final class PageConstants {
+public class PageConstants {
 
     protected static final String googleHomepageUrl = "http://www.google.com.br";
 

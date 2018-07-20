@@ -1,5 +1,6 @@
 package seleniumTask.webInfra.pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,26 +15,27 @@ public class GoogleHomePage extends BasePage {
     @FindBy(name = "q")
     private WebElement searchBar;
 
-    @FindBy(name = "btnK")
-    private WebElement searchButton;
-
     private String googleHomepageUrl = PageConstants.googleHomepageUrl;
 
     public GoogleHomePage(WebDriver webDriver) {
         super(webDriver);
     }
 
+    public WebElement getSearchBar() {
+        return searchBar;
+    }
+
+    public void setSearchBar(WebElement searchBar) {
+        this.searchBar = searchBar;
+    }
+
     public String getGoogleHomepageUrl() {
         return googleHomepageUrl;
     }
 
-    public boolean isInitialized(){
-        return isInitialized(searchBar) && isInitialized(searchButton);
-    }
-
     public GoogleSearchResultsPage search(String searchText){
         setSearchText(searchText, searchBar);
-        click(searchButton);
+        searchBar.sendKeys(Keys.RETURN);
         return new GoogleSearchResultsPage(webDriver);
     }
 }

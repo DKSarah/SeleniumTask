@@ -1,4 +1,4 @@
-package bringgWebTests.validations;
+package seleniumTask.bringgWebTests.validations;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

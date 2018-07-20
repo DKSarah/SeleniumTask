@@ -38,13 +38,11 @@ public class BringgSearchResultsPageValidations {
     }
 
     private static void clickNextPageButton(BringgSearchResultsPage bringgSearchResultsPage){
-        if(bringgSearchResultsPage.hasPagination()) {
-            for (WebElement element : bringgSearchResultsPage.getPagesList()) {
-                if (!element.getText().equals("…")) {
-                    if (element.findElement(By.tagName("a")).getText().equals(bringgSearchResultsPage.getNextPageButtonText())) {
-                        bringgSearchResultsPage.click(element);
-                        break;
-                    }
+        for (WebElement element : bringgSearchResultsPage.getPagesList()) {
+            if (!element.getText().equals("…")) {
+                if (element.findElement(By.tagName("a")).getText().equals(bringgSearchResultsPage.getNextPageButtonText())) {
+                    bringgSearchResultsPage.click(element);
+                    break;
                 }
             }
         }

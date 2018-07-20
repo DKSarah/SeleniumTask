@@ -1,6 +1,6 @@
-package bringgWebTests;
+package seleniumTask.bringgWebTests;
 
-import bringgWebTests.validations.BringgSearchResultsPageValidations;
+import seleniumTask.bringgWebTests.validations.BringgSearchResultsPageValidations;
 import seleniumTask.webInfra.pages.BringgHomepage;
 import seleniumTask.webInfra.pages.BringgSearchResultsPage;
 import seleniumTask.webInfra.pages.GoogleHomePage;
@@ -11,18 +11,18 @@ import static junit.framework.TestCase.assertTrue;
 /**
  * Created by sarahd on 18/07/2018.
  */
-public abstract class AbstractTest extends FunctionalTest {
+public abstract class AbstractBringgWebTest extends FunctionalBringgWebTest {
 
-    public AbstractTest navigateToGoogleHomePage(){
+    public AbstractBringgWebTest navigateToGoogleHomePage(){
 
         GoogleHomePage googleHomePage = new GoogleHomePage(webDriver);
         googleHomePage.goToWebsite(googleHomePage.getGoogleHomepageUrl());
-        assertTrue(googleHomePage.isInitialized());
+        assertTrue(googleHomePage.isInitialized(googleHomePage.getSearchBar()));
 
         return this;
     }
 
-    public AbstractTest searchInGoogleHomePage(String searchText){
+    public AbstractBringgWebTest searchInGoogleHomePage(String searchText){
 
         GoogleHomePage googleHomePage = new GoogleHomePage(webDriver);
         GoogleSearchResultsPage googleSearchResultsPage = googleHomePage.search(searchText);
@@ -31,7 +31,7 @@ public abstract class AbstractTest extends FunctionalTest {
         return this;
     }
 
-    public AbstractTest navigateToBringgHomePageFromGoogleSearchResults() throws Exception {
+    public AbstractBringgWebTest navigateToBringgHomePageFromGoogleSearchResults() throws Exception {
 
         GoogleSearchResultsPage googleSearchResultsPage = new GoogleSearchResultsPage(webDriver);
         BringgHomepage bringgHomepage = googleSearchResultsPage.goToBringgHomePage();
@@ -41,7 +41,7 @@ public abstract class AbstractTest extends FunctionalTest {
         return this;
     }
 
-    public AbstractTest searchInBringgHomePage(String searchText){
+    public AbstractBringgWebTest searchInBringgHomePage(String searchText){
 
         BringgHomepage bringgHomepage = new BringgHomepage(webDriver);
         BringgSearchResultsPage bringgSearchResultsPage = bringgHomepage.search(searchText);

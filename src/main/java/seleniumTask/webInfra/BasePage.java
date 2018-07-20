@@ -1,5 +1,6 @@
 package seleniumTask.webInfra;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -24,17 +25,11 @@ public class BasePage extends PageConstants{
         webDriver.get(url);
     }
 
-    public void setSearchText(String searchText, WebElement webElement){
+    protected void setSearchText(String searchText, WebElement webElement){
         webElement.sendKeys(searchText);
     }
 
     public void click(WebElement webElement){
         webElement.click();
     }
-
-//    driver() if wendriver==nul return webdriver
-//    gotowebsite(url)
-//    click
-//    search
-//    get
 }

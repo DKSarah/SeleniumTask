@@ -1,12 +1,12 @@
-package bringgWebTests.tests;
+package seleniumTask.bringgWebTests.tests;
 
-import bringgWebTests.AbstractTest;
+import seleniumTask.bringgWebTests.AbstractBringgWebTest;
 import org.junit.Test;
 
 /**
  * Created by sarahd on 16/07/2018.
  */
-public class TaskTest extends AbstractTest {
+public class SearchInBringgTest extends AbstractBringgWebTest {
 
     @Test
     public void navigateAndSearchBringgHomePage() throws Exception {
@@ -14,7 +14,7 @@ public class TaskTest extends AbstractTest {
         navigateToGoogleHomePage()
         .searchInGoogleHomePage("bringg")
         .navigateToBringgHomePageFromGoogleSearchResults()
-        .searchInBringgHomePage("sarah")
+        .searchInBringgHomePage("delivery")
         .validateBringgSearchResultsPage();
     }
 }
